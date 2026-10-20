@@ -3,7 +3,7 @@
 ! Homepage: https://github.com/d2x/vizio-dns-blocklist
 ! License: https://unlicense.org/
 ! Expires: 4 days
-! Version: 2026.10.20.1
+! Version: 2026.10.20.2
 !
 ! Format: AdGuard / adblock-style DNS rules. `||host^` also blocks that host's subdomains.
 ! Deliberately NOT blocked (blocking these breaks the TV): api.vizio.com, scfs.vizio.com,
@@ -18,6 +18,7 @@
 ! ---- Ads and ad measurement ----
 ||ads.vizio.com^
 ||vizio.adsmeasurement.com^
+||admeasurement.com^
 ||impression-proxy-prod.smartcasttv.com^
 ||ad-broker-prod.smartcasttv.com^
 ||promotions-prod.smartcasttv.com^
@@ -32,3 +33,7 @@
 
 ! ---- Crash / trace reporting (Sentry project used by SmartCast firmware) ----
 ||o401343.ingest.us.sentry.io^
+
+! ---- Legacy Vizio Internet Apps (Yahoo widget platform, pre-SmartCast sets) ----
+||digitalhomeservices.yahoo.com^
+||widgets.yahoo.com^

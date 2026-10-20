@@ -57,6 +57,9 @@ Blocking these breaks the TV. Don't add them unless you want it offline:
 - Other hosts come from community Smart-TV blocklists (Okazakee/tv-dns-blocklist, Perflyst/PiHoleBlocklist
   SmartTV list) and were checked to resolve in public DNS on 2026-10-20. `ad-broker-prod`, `promotions-prod` and
   `rlog_sem` didn't resolve that day; they stay listed because blocking a missing name has no effect.
+- Inclusion policy: any host a source flags as possible ad serving, ad measurement or tracking stays listed, even if
+  its link to Vizio is weak (e.g. `admeasurement.com`) or it only matters to older sets (the Yahoo widget hosts).
+  A host is removed only if blocking it breaks something.
 - They have **not yet been checked against a live TV's query log**. Additions should come from real query logs.
 
 ## Contributing
