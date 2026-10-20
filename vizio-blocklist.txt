@@ -1,14 +1,14 @@
 ! Title: Vizio SmartCast ads & telemetry blocklist
-! Description: Blocks Vizio SmartCast home-screen ads, ad measurement, ACR (Inscape) viewing-data reporting and telemetry while leaving the hosts SmartCast, apps, Chromecast and firmware updates need.
+! Description: Blocks Vizio SmartCast home-screen ads, ad measurement, ACR (Inscape) viewing-data reporting, telemetry and Vizio's own content services (WatchFree+, catalogue/recommendation rows, voice search) while leaving the hosts that apps, Chromecast and firmware updates need.
 ! Homepage: https://github.com/d2x/vizio-dns-blocklist
 ! License: https://unlicense.org/
 ! Expires: 4 days
-! Version: 2026.10.20.2
+! Version: 2026.10.20.3
 !
 ! Format: AdGuard / adblock-style DNS rules. `||host^` also blocks that host's subdomains.
 ! Deliberately NOT blocked (blocking these breaks the TV): api.vizio.com, scfs.vizio.com,
 ! osu.vudip.vizio.com (updates), vizio.pool.ntp.org (clock), *.plat.vizio.com (registration),
-! user-authorization/video-api/catalog/epg/voice-search *-prod.smartcasttv.com, image-api-prod.smartcasttv.com.
+! user-authorization-prod.smartcasttv.com (sign-in), image-api-prod.smartcasttv.com (app artwork).
 ! Never block the whole vizio.com or smartcasttv.com zones.
 
 ! ---- ACR / viewing data (Inscape) ----
@@ -30,6 +30,13 @@
 ||rlog_sem.vizio.com^
 ||content-engagement-metrics.smartcasttv.com^
 ||experiments-prod.smartcasttv.com^
+
+! ---- Vizio content services: WatchFree+, home-screen catalogue/recommendation rows, voice search ----
+! Blocking these empties WatchFree+, the content rows and search; third-party apps (Netflix, Plex, YouTube) are unaffected.
+||video-api-prod.smartcasttv.com^
+||watchfreeplus-epg-prod.smartcasttv.com^
+||voice-search-prod.smartcasttv.com^
+||catalog-prod.smartcasttv.com^
 
 ! ---- Crash / trace reporting (Sentry project used by SmartCast firmware) ----
 ||o401343.ingest.us.sentry.io^
