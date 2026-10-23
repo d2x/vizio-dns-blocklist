@@ -36,7 +36,7 @@
 !||video-api-prod.smartcasttv.com^
 ||watchfreeplus-epg-prod.smartcasttv.com^
 ||voice-search-prod.smartcasttv.com^
-||catalog-prod.smartcasttv.com^
+!||catalog-prod.smartcasttv.com^
 
 ! ---- Crash / trace reporting (Sentry project used by SmartCast firmware) ----
 ||o401343.ingest.us.sentry.io^
