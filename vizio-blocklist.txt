@@ -33,7 +33,7 @@
 
 ! ---- Vizio content services: WatchFree+, home-screen catalogue/recommendation rows, voice search ----
 ! Blocking these empties WatchFree+, the content rows and search; third-party apps (Netflix, Plex, YouTube) are unaffected.
-||video-api-prod.smartcasttv.com^
+!||video-api-prod.smartcasttv.com^
 ||watchfreeplus-epg-prod.smartcasttv.com^
 ||voice-search-prod.smartcasttv.com^
 ||catalog-prod.smartcasttv.com^
