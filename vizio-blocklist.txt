@@ -1,13 +1,13 @@
 ! Title: Vizio SmartCast ads & telemetry blocklist
-! Description: Blocks Vizio SmartCast home-screen ads, ad measurement, ACR (Inscape) viewing-data reporting, telemetry and Vizio's own content services (WatchFree+, catalogue/recommendation rows, voice search) while leaving the hosts that apps, Chromecast and firmware updates need.
+! Description: Blocks Vizio SmartCast home-screen ads, ad measurement, ACR (Inscape) viewing-data reporting, telemetry and Vizio's own content services (WatchFree+, catalogue/recommendation rows, voice search) and firmware updates, while leaving the hosts that apps and Chromecast need.
 ! Homepage: https://github.com/d2x/vizio-dns-blocklist
 ! License: https://unlicense.org/
 ! Expires: 4 days
-! Version: 2026.10.20.3
+! Version: 2026.10.22.1
 !
 ! Format: AdGuard / adblock-style DNS rules. `||host^` also blocks that host's subdomains.
 ! Deliberately NOT blocked (blocking these breaks the TV): api.vizio.com, scfs.vizio.com,
-! osu.vudip.vizio.com (updates), vizio.pool.ntp.org (clock), *.plat.vizio.com (registration),
+! vizio.pool.ntp.org (clock), *.plat.vizio.com (registration),
 ! user-authorization-prod.smartcasttv.com (sign-in), image-api-prod.smartcasttv.com (app artwork).
 ! Never block the whole vizio.com or smartcasttv.com zones.
 
@@ -37,6 +37,11 @@
 ! ||video-api-prod.smartcasttv.com^
 ! ||watchfreeplus-epg-prod.smartcasttv.com^
 ! ||voice-search-prod.smartcasttv.com^
+
+! ---- Firmware updates ----
+! Blocks over-the-air firmware updates. The TV will stay on its current firmware (including missing security fixes);
+! comment this out temporarily if you want to let an update through.
+||osu.vudip.vizio.com^
 
 ! ---- Crash / trace reporting (Sentry project used by SmartCast firmware) ----
 ||o401343.ingest.us.sentry.io^
